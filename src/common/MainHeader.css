@@ -1,0 +1,216 @@
+/* Main Header Styles */
+#main-header {
+    background-color: #ffffff;
+    padding: 15px 0;
+    position: relative;
+    z-index: 1000;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+#logo {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+#logo .logo-image {
+    width: 158px;
+    height: 33px;
+    object-fit: contain;
+}
+
+/* Large Above Menu Styles */
+.large-above-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.widget_anpstext {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.widget_anpstext .icon {
+    color: var(--icon-color, #26507a);
+    font-size: var(--icon-font-size, 18px);
+    width: var(--icon-size, 64px);  /* Contenedor más grande */
+    height: var(--icon-size, 64px);
+    text-align: center;
+    line-height: var(--icon-size, 64px);
+    margin: var(--icon-margin, 10px);
+    border: var(--icon-border-width, 1px) solid var(--icon-border-color, #e5e5e5);
+    border-radius: var(--icon-border-radius, 4px);
+    display: inline-block;
+    box-sizing: border-box;
+    
+    /* Estilos específicos para el SVG */
+    & svg {
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+        fill: currentColor; /* Hereda el color del contenedor */
+    }
+}
+
+
+
+
+.anpstext-desc {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #727272;
+}
+
+.anpstext-desc .important {
+    font-weight: bold;
+    color: #26507a;
+}
+
+/* Social Icons Styles */
+/* Contenedor Principal para Centrado Perfecto */
+.widget-anps-social-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh; /* Opcional: ajusta según tu layout */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Contenedor del Widget Social */
+.widget_anpssocial {
+    width: 169px;
+    height: 64px;
+    padding: 15px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background: white;
+    margin: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Lista de Iconos Sociales */
+.widget_anpssocial ul.socialize {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 8px;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Items de la Lista */
+.widget_anpssocial ul.socialize li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Enlaces - Área Clickeable */
+.widget_anpssocial ul.socialize li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 62px;
+    color: #26507a;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+}
+
+/* Contenedor del Icono */
+.widget_anpssocial ul.socialize li a .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Iconos SVG */
+.widget_anpssocial ul.socialize li a svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+}
+
+/* Efectos Hover */
+.widget_anpssocial ul.socialize li a:hover {
+    color: #00d084;
+}
+
+.widget_anpssocial ul.socialize li a:hover svg {
+    transform: scale(1.15);
+}
+
+.widget_anpssocial ul.socialize li a:hover .icon-wrapper {
+    border-color: #00d084;
+    background-color: rgba(0, 208, 132, 0.08);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Versión Responsive */
+@media (max-width: 768px) {
+    .widget-anps-social-wrapper {
+        flex-direction: column;
+    }
+    
+    .widget_anpssocial {
+        width: 160px;
+        height: 60px;
+        margin: 8px 0;
+    }
+    
+    .widget_anpssocial ul.socialize li a {
+        width: 42px;
+        height: 58px;
+    }
+}
+
+@media (max-width: 480px) {
+    .widget_anpssocial {
+        width: 150px;
+        height: 56px;
+        padding: 12px;
+    }
+    
+    .widget_anpssocial ul.socialize {
+        gap: 6px;
+    }
+    
+    .widget_anpssocial ul.socialize li a {
+        width: 40px;
+        height: 54px;
+    }
+}

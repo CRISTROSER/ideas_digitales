@@ -1,0 +1,114 @@
+/* Estilo base del banner */
+.main-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'PT Sans', sans-serif;
+    margin-top: -35px; /* Ajusta según altura de tu navbar */
+    z-index: 1;
+    background-color: transparent;
+
+  }
+  
+  /* Slides */
+  .main-banner .carousel-item {
+    position: relative;
+  }
+  
+  .main-banner .carousel-item img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+  
+  /* Contenido alineado a la izquierda con mayor proximidad */
+  .custom-caption {
+    position: absolute;
+    top: 50%;
+    left: 8%; /* Reducido de 15% a 8% para estar más cerca del borde */
+    transform: translateY(-50%);
+    text-align: left;
+    max-width: 720px;
+    padding: 1rem; /* Reducido el padding */
+  }
+  
+  .custom-caption h1 {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 52px;
+    line-height: 52px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0px;
+    white-space: nowrap;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.8rem; /* Reducido el margen inferior */
+    width: auto;
+  }
+  
+  /* Subtítulo más cerca del título */
+  .custom-caption p {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem; /* Reducido el margen inferior */
+    line-height: 1.6;
+    max-width: 90%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Botones más compactos y cerca del subtítulo */
+  .banner-buttons {
+    display: flex;
+    gap: 0.8rem; /* Reducido el espacio entre botones */
+    flex-wrap: wrap;
+    margin-top: 0.5rem; /* Reducido el margen superior */
+  }
+  
+  .banner-buttons .btn {
+    font-family: 'PT Sans', sans-serif;
+    padding: 0.6rem 1.5rem; /* Padding más compacto */
+    font-size: 0.95rem; /* Tamaño de fuente ligeramente reducido */
+    font-weight: 600;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  
+  .banner-buttons .btn-dark {
+    background-color: #1c1c1c;
+    color: #fff;
+    border: none;
+  }
+  
+  .banner-buttons .btn-info {
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+  }
+  
+  /* Indicadores */
+  .main-banner .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000;
+    opacity: 0.5;
+    margin: 0 5px;
+  }
+  
+  .main-banner .carousel-indicators .active {
+    opacity: 1;
+    background-color: #00bcd4;
+  }
+  
+  /* Flechas */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 0.5rem;
+  }

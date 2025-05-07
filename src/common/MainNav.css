@@ -1,0 +1,381 @@
+/* Variables and global styles */
+:root {
+  --nav--css--font-size--normal: 14px; /* Tamaño de letra cambiado a 14px */
+  --nav--css--font-size--huge: 42px;
+  --nav--css--font-family--montserrat: "Montserrat", sans-serif; /* Fuente cambiada a Montserrat */
+  --nav--css--color--white: #ffffff;
+  --nav--css--color--light-gray: #f5f5f5;
+  --nav--css--color--dark: #163651;
+  --nav--css--color--dark-hover: #0e2638;
+  --nav--css--color--blue: #26507a;
+  --nav--css--color--blue-hover: #1c3d5c;
+  --nav--css--color--green: #16a085;
+  --nav--css--color--green-hover: #12806c;
+  --nav--css--color--accent: #e74c3c;
+  --nav--css--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+  --nav--css--transition--default: all 0.3s ease;
+}
+
+/* Page Container - Centra todo el contenido */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: var(--nav--css--color--light-gray);
+}
+
+/* Header Wrapper - Contenedor principal centrado */
+.header-wrap {
+  width: 100%;
+  max-width: 1425px;
+  height: 63px;
+  background-color: var(--nav--css--color--white);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+  padding: 0;
+  box-sizing: border-box;
+  box-shadow: var(--nav--css--shadow--natural);
+}
+
+/* Main Navigation - Barra de navegación centrada */
+.navbar {
+  width: 100%;
+  max-width: 1140px;
+  height: 63px;
+  background-color: var(--nav--css--color--dark) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--nav--css--font-family--montserrat);
+  box-shadow: var(--nav--css--shadow--natural);
+  margin: 0 auto;
+  z-index: 1000;
+  transition: var(--nav--css--transition--default);
+}
+
+/* Contenedor interno de la navbar */
+.navbar-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Logo styles */
+.navbar .logo {
+  font-size: var(--nav--css--font-size--huge);
+  font-weight: bold;
+  color: var(--nav--css--color--white);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar .logo:hover {
+  opacity: 0.8;
+  color: var(--nav--css--color--green);
+}
+
+/* Main menu styles - Izquierda */
+.navbar .main-menu-left {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 5px;
+  height: 100%;
+  align-items: center;
+  margin-right: auto;
+}
+
+/* Main menu styles - Derecha */
+.navbar .main-menu-right {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 5px;
+  height: 100%;
+  align-items: center;
+  margin-left: auto;
+}
+
+.navbar ul li {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--nav--css--color--white);
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: var(--nav--css--font-size--normal);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: var(--nav--css--transition--default);
+}
+
+.navbar ul li a:hover {
+  background-color: var(--nav--css--color--green);
+  color: var(--nav--css--color--white);
+}
+
+.navbar ul li.active > a {
+  background-color: var(--nav--css--color--blue);
+}
+
+/* Dropdown menu styles */
+.navbar ul li ul {
+  display: none;
+  position: absolute;
+  background-color: var(--nav--css--color--dark);
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  box-shadow: var(--nav--css--shadow--natural);
+  border-radius: 0 0 4px 4px;
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--nav--css--transition--default);
+  transform: translateY(10px);
+  flex-direction: column;
+  height: auto;
+}
+
+.navbar ul li:hover ul {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.navbar ul li ul li {
+  width: 100%;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  height: auto;
+}
+
+.navbar ul li ul li:last-child {
+  border-bottom: none;
+}
+
+.navbar ul li ul li a {
+  padding: 12px 20px;
+  color: var(--nav--css--color--white);
+  font-weight: 500;
+  transition: var(--nav--css--transition--default);
+}
+
+.navbar ul li ul li a:hover {
+  background-color: var(--nav--css--color--green);
+  padding-left: 25px;
+  color: var(--nav--css--color--white);
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  color: var(--nav--css--color--white);
+  font-size: 24px;
+  background: none;
+  border: none;
+  z-index: 1002;
+  transition: var(--nav--css--transition--default);
+}
+
+.menu-toggle:hover {
+  color: var(--nav--css--color--green);
+}
+
+.submenu-toggle {
+  display: none;
+  cursor: pointer;
+  color: var(--nav--css--color--white);
+  background: none;
+  border: none;
+  padding: 0 10px;
+  margin-left: auto;
+  transition: var(--nav--css--color--dark);
+}
+
+.submenu-toggle:hover {
+  color: var(--nav--css--color--green);
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .header-wrap {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-container {
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+  
+  .navbar .logo {
+    position: static;
+    transform: none;
+    margin: 0 auto;
+    font-size: 32px;
+  }
+  
+  .navbar .main-menu-left,
+  .navbar .main-menu-right {
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 63px;
+    left: 0;
+    background-color: var(--nav--css--color--dark);
+    display: none;
+    height: auto;
+    gap: 0;
+  }
+  
+  .navbar ul.active {
+    display: flex;
+  }
+  
+  .navbar ul li {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .navbar ul li a {
+    width: 100%;
+    padding: 15px 20px;
+    box-sizing: border-box;
+  }
+  
+  .navbar ul li ul {
+    position: static;
+    box-shadow: none;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 0;
+  }
+  
+  .navbar ul li:hover ul {
+    display: none;
+  }
+  
+  .navbar ul li ul.active {
+    display: flex;
+  }
+  
+  .navbar ul li ul li a {
+    padding-left: 35px;
+  }
+  
+  .menu-toggle {
+    display: block;
+    order: 3;
+  }
+  
+  .submenu-toggle {
+    display: block;
+  }
+  
+  .submenu-toggle.active {
+    transform: rotate(180deg);
+    color: var(--nav--css--color--green);
+  }
+}
+
+/* Accessibility improvements */
+.navbar a:focus {
+  outline: 2px solid var(--nav--css--color--green);
+  outline-offset: 2px;
+  background-color: var(--nav--css--color--blue);
+}
+
+/* Animation for dropdown */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.navbar ul li ul {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Sticky navbar */
+.navbar.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 100%;
+  animation: slideDown 0.5s ease forwards;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+.bg-custom-dark {
+  background-color: var(--nav--css--color--dark) !important;
+}
+
+/* Active state for mobile menu */
+.navbar.mobile-menu-open {
+  height: auto;
+  min-height: 63px;
+}
+
+/* Pre-load animations to prevent flash */
+.navbar {
+  will-change: transform, height;
+}
+
+/* Hover effects for better UX */
+.navbar ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: auto; /* Altura normal para items desplegables */
+  background-color: var(--nav--css--color--green);
+  transition: var(--nav--css--transition--default);
+  transform: translateX(-50%);
+}
+
+.navbar ul li a:hover::after {
+  width: 80%;
+}
+
+.navbar ul li ul li a::after {
+  display: none;
+}

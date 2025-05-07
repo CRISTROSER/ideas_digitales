@@ -1,0 +1,146 @@
+.nosotros-container {
+    background-image: url('https://pikwizard.com/pw/medium/56e305d83c8877416cac9206c6cabcfa.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 396px;
+    padding: 100px 0;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .nosotros-overlay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    color: #fff;
+  }
+  
+  .nosotros-left {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+  }
+  
+  .nosotros-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  .nosotros-description {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 450px;
+  }
+  
+  .nosotros-form {
+    flex: 1;
+    padding: 30px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    max-width: 500px;
+  }
+  
+  .nosotros-label {
+    color: #fffdfd;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  .nosotros-select,
+  .nosotros-input {
+    padding: 12px 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+  
+  .nosotros-button {
+    background-color: #0d2b46;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .nosotros-button:hover {
+    background-color: #103b64;
+  }
+  
+  @media (min-width: 768px) {
+    .nosotros-overlay {
+      justify-content: space-between;
+    }
+  
+    .nosotros-form {
+      max-width: calc(50% - 10px);
+    }
+  }
+
+
+  /* Agrega esto a tu archivo Nosotros.css */
+
+.nosotros-form-group {
+    display: flex;
+    gap: 15px; /* Espacio entre los inputs en la misma línea */
+  }
+  
+  .nosotros-form-group .nosotros-input {
+    flex: 1; /* Hace que ambos inputs ocupen el mismo espacio */
+  }
+  
+  /* Asegúrate que los otros elementos del formulario mantengan su estilo */
+  .nosotros-select,
+  .nosotros-input:not(.nosotros-form-group .nosotros-input) {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+
+
+.nosotros-select-group {
+  display: flex;
+  align-items: flex-end; /* Alinea el botón con el select */
+  gap: 15px; /* Espacio entre el select y el botón */
+}
+
+.nosotros-select-container {
+  flex-grow: 1; /* Ocupa todo el espacio disponible */
+}
+
+.nosotros-button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Color de ejemplo */
+  color: white;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap; /* Evita que el texto del botón se divida en varias líneas */
+  height: fit-content; /* Ajusta la altura al contenido */
+}
+
+.nosotros-select {
+  width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+.nosotros-label {
+  display: block;
+  margin-bottom: 5px;
+}

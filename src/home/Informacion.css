@@ -1,0 +1,330 @@
+/* Variables */
+:root {
+  --information--css--color--white: #ffffff;
+  --information--css--color--dark: #242424;
+  --information--css--color--blue: #26507a;
+  --information--css--color--green: #16a085;
+  --information--css--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+  --information--css--font-size--normal: 14px;
+  --information--css--font-size--medium: 18px;
+  --information--css--font-size--large: 22px;
+  --information--css--spacing--small: 15px;
+  --parallax-button-bg: #00a5df;
+}
+
+/* Base Styles */
+.informacion-container {
+  font-family: 'PT Sans', sans-serif;
+  line-height: 23px;
+  color: #727272;
+  font-size: var(--information--css--font-size--normal);
+  padding-top: 85px !important;
+  padding-bottom: 85px !important;
+  transition: opacity 0.5s ease;
+  overflow: visible;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+
+/* Row Styles */
+.vc_custom_row {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  left: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+/* Column Styles */
+.wpb_column {
+  position: relative;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.vc_col-sm-4 {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+
+.vc_column-inner {
+  height: 100%;
+}
+
+/* Image Styles */
+.wpb_single_image {
+  margin-bottom: 20px;
+}
+
+.vc_single_image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.vc_single_image-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.vc_single_image-img:hover {
+  transform: scale(1.03);
+}
+
+.vc_box_border_grey {
+  border: 1px solid #ddd;
+}
+
+/* Custom Image */
+.custom-image {
+  border-radius: 8px;
+  margin-bottom: 20px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Heading Styles */
+.heading-content.style-1 {
+  font-size: var(--information--css--font-size--medium);
+  color: var(--information--css--color--dark);
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.heading-content.style-1 span {
+  position: relative;
+  display: inline-block;
+}
+
+.heading-content.style-1 span::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--information--css--color--green);
+}
+
+/* Text Content Styles */
+.wpb_text_column p {
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 8px 20px;
+  font-size: var(--information--css--font-size--normal);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-sm {
+  padding: 6px 15px;
+  font-size: 13px;
+}
+
+.btn.style-4 {
+  background-color: var(--information--css--color--green);
+  color: var(--information--css--color--white) !important;
+}
+
+.btn.style-4:hover {
+  background-color: var(--information--css--color--blue);
+  box-shadow: var(--information--css--shadow--natural);
+}
+
+.btn.style-1 {
+  background-color: var(--parallax-button-bg);
+  color: var(--information--css--color--white);
+  padding: 12px 30px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Empty Space */
+.vc_empty_space {
+  height: var(--information--css--spacing--small);
+}
+
+.custom-space-20 {
+  height: 20px;
+}
+
+.custom-space-15 {
+  height: 15px;
+}
+
+/* Custom Inner Row */
+.vc_custom_inner_row {
+  background-color: var(--information--css--color--blue);
+  padding: 30px 20px;
+  border-radius: 4px;
+  height: 100%;
+}
+
+.vc_custom_inner_column {
+  padding: 20px;
+}
+
+/* Custom Heading */
+.vc_custom_heading {
+  color: var(--information--css--color--white) !important;
+  text-align: center;
+  margin: 0 0 10px 0;
+  font-size: var(--information--css--font-size--large);
+  line-height: var(--information--css--font-size--large);
+}
+
+.vc_custom_heading.subtitle {
+  font-size: var(--information--css--font-size--medium);
+  line-height: var(--information--css--font-size--medium);
+  font-weight: 300;
+}
+
+/* Parallax Section Styles */
+.parallax-section {
+  position: relative;
+  width: 100vw; /* Usar el 100% del viewport width */
+  min-height: 435px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 40px 0;
+  left: 50%; /* Centrar horizontalmente */
+  right: 50%; /* Centrar horizontalmente */
+  margin-left: -50vw; /* Compensar el desplazamiento */
+  margin-right: -50vw; /* Compensar el desplazamiento */
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 1425px;
+  height: 335px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.parallax-title {
+  font-size: 42px;
+  color: var(--information--css--color--white);
+  line-height: 42px;
+  margin-bottom: 20px;
+}
+
+.parallax-text {
+  font-size: 20px;
+  color: var(--information--css--color--white);
+  max-width: 700px;
+  margin: 0 auto 25px;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  background-image: url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80);
+}
+
+/* Responsive Styles */
+@media (max-width: 1425px) {
+  .parallax-content {
+    width: 100%;
+    max-width: 1425px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .vc_custom_row {
+    width: 100%;
+    left: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .parallax-title {
+    font-size: 36px;
+  }
+  
+  .parallax-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 992px) {
+  .vc_col-sm-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .vc_custom_inner_row {
+    margin-top: 30px;
+  }
+  
+  .parallax-content {
+    height: auto;
+    padding: 40px 20px;
+  }
+  
+  .parallax-title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 768px) {
+  .informacion-container {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+  
+  .vc_custom_heading:first-child {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  
+  .vc_custom_heading.subtitle {
+    font-size: 16px;
+  }
+
+  .parallax-title {
+    font-size: 28px;
+  }
+
+  .parallax-text {
+    font-size: 16px;
+  }
+}

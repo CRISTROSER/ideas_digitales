@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
+:root {
+  --color1: #f5eedc;
+  --color2: #27548a;
+  --color3: #183b4e;
+  --color4: #dda853;
+  --color-blanco: #ffffff;
+  --color-negro: #000000;
+  --color-gris-claro: #cccccc;
+  --color-gris-oscuro: #333333;
+  --navbar-background: #163651;
+}
+
+body {
+  font-family: Urbanist, sans-serif;
+}
+
+h1 {
+  font-size: 4.5rem;
+  letter-spacing: -0.2rem;
+  font-weight: 200;
+}
+
+h2 {
+  font-size: 3rem;
+  letter-spacing: -0.1rem;
+  font-weight: 900;
+  text-transform: lowercase;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.padded {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.list-group-item.active {
+  background-color: var(--color3);
+  border-color: var(--color3);
+}
+
+.navbar {
+  background-color: var(--navbar-background);
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+}
+
+@media (min-width: 1580px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1500px;
+  }
+}

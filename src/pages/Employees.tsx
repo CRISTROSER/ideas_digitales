@@ -1,56 +1,91 @@
 import { useEffect, useState } from "react";
 import PageHeader from "../components/PageHeader";
-import { Empleado } from "../types/Empleados";
-import { API_URL } from "../utils";
+import "./Employees.css";
+
+// Definición de tipo Cliente localmente (elimina la dependencia de ../types/Clientes)
+interface Cliente {
+  idcliente: number;
+  nombres: string;
+  apellidos: string;
+  email: string;
+  telefono: string;
+  direccion: string;
+  fechanacimiento: string;
+  estado: boolean;
+}
 
 function Employees() {
-  const [listaEmpleados, setListaEmpleados] = useState<Empleado[]>([]);
+  const [listaClientes, setListaClientes] = useState<Cliente[]>([]);
+  const [cargando, setCargando] = useState<boolean>(true);
 
   useEffect(() => {
     leerServicio();
   }, []);
 
   const leerServicio = () => {
-    fetch(API_URL + "empleados.php")
+    setCargando(true);
+    // Usando API_URL en lugar de la URL hardcodeada
+    fetch(`${import.meta.env.VITE_API_URL || "https://servicios.campus.pe"}/clientes.php`)
       .then((response) => response.json())
-      .then((data: Empleado[]) => {
-        console.log(data);
-        setListaEmpleados(data);
+      .then((data: Cliente[]) => {
+        setListaClientes(data);
+        setCargando(false);
       })
       .catch((error) => {
         console.error("Error consultando datos:", error);
+        setCargando(false);
       });
-  };
-
-  const dibujarCuadricula = () => {
-    return (
-      <div className="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 g-4">
-        {listaEmpleados.map((item) => (
-          <div className="col" key={item.idempleado}>
-            <div className="card">
-              <img
-                src={API_URL + "fotos/" + item.foto}
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title">
-                  {item.nombres} {item.apellidos}
-                </h5>
-                <p className="card-text">{item.cargo}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    );
   };
 
   return (
     <>
-      <PageHeader pageTitle="Empleados" />
+      <PageHeader pageTitle="Clientes" />
       <section id="employees" className="padded">
-        <div className="container">{dibujarCuadricula()}</div>
+        <div className="container">
+          {cargando ? (
+            <div className="text-center">
+              <div className="spinner-border text-primary" role="status">
+                <span className="visually-hidden">Cargando...</span>
+              </div>
+              <p>Cargando clientes...</p>
+            </div>
+          ) : (
+            <div className="table-responsive">
+              <table className="table table-striped table-hover">
+                <thead className="table-dark">
+                  <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Dirección</th>
+                    <th>Fecha Nac.</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {listaClientes.map((cliente) => (
+                    <tr key={cliente.idcliente}>
+                      <td>{cliente.idcliente}</td>
+                      <td>
+                        {cliente.nombres} {cliente.apellidos}
+                      </td>
+                      <td>{cliente.email}</td>
+                      <td>{cliente.telefono}</td>
+                      <td>{cliente.direccion}</td>
+                      <td>{new Date(cliente.fechanacimiento).toLocaleDateString()}</td>
+                      <td>
+                        <span className={`badge ${cliente.estado ? 'bg-success' : 'bg-secondary'}`}>
+                          {cliente.estado ? 'Activo' : 'Inactivo'}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
       </section>
     </>
   );
